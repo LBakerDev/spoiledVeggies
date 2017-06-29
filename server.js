@@ -8,7 +8,7 @@ const { PORT, DATABASE_URL } = require('./config');
 
 
 
-//mongoose.connect('mongodb://localhost/spoiledveggies');
+//mongoose.connect('mongodb://localhost/spoiledveggies', { useMongoClient: true});
 
 
 // title
@@ -18,6 +18,14 @@ const { PORT, DATABASE_URL } = require('./config');
 
 app.set("view engine", "ejs");
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({extended: true}));
+
+
+// create blogSchema
+
+const blogSchema = new mongoose.Schema({
+
+}) 
 
 
 
@@ -34,9 +42,8 @@ app.use(express.static('public'));
 
 
 
-
-
-
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8080, function() {
+    console.log('Server is Running!')
+});
 
 module.exports = {app};
