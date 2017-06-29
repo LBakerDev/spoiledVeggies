@@ -7,25 +7,26 @@ app                 = express();
 const { PORT, DATABASE_URL } = require('./config');
 
 
-
-//mongoose.connect('mongodb://localhost/spoiledveggies', { useMongoClient: true});
-
-
-// title
-// image
-// body
-// created
-
+// App configuration
 app.set("view engine", "ejs");
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-// create blogSchema
+// Mongoose model configuration
 
 const blogSchema = new mongoose.Schema({
+    title: {type: String, required: true},
+    image: {type: String, required: true},
+    body: {type: String, required: true},
+    created: {type: Date, default: Date.now}
+});
 
-}) 
+const Blog = mongoose.model("Blog, blogSchema");
+
+//RESTful Routes
+
+
 
 
 
