@@ -24,10 +24,28 @@ const blogSchema = new mongoose.Schema({
 
 const Blog = mongoose.model("Blog", blogSchema);
 
+Blog.create({
+    title: "First Post",
+    image: "https://unsplash.com/?photo=JIISwPwxPD8",
+    body: "This is surely the first Post"
+})
+
+Blog.create({
+    title: "Second Post",
+    image: "https://unsplash.com/?photo=kQzFr1JqSKM",
+    body: "I promise this is the second Post"
+})
+
+Blog.create({
+    title: "Third Post",
+    image: "https://unsplash.com/?photo=kQzFr1JqSKM",
+    body: "There is no doubt that this is the third and final post"
+})
 
 
 //RESTful Routes
 
+// route to GET all blog posts
 app.get("/", function(req, res) {
     res.redirect("/blogs");
 });
