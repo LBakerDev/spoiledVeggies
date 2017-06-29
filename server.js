@@ -4,8 +4,8 @@ express             = require('express'),
 app                 = express();
 
 // include config.js for PORT and DB info
-const { PORT, DATABASE_URL } = require('./config');
-
+//const { PORT, DATABASE_URL } = require('./config');
+mongoose.connect("mongodb://localhost/spoiledveggies");
 
 // App configuration
 app.set("view engine", "ejs");
@@ -22,22 +22,13 @@ const blogSchema = new mongoose.Schema({
     created: {type: Date, default: Date.now}
 });
 
-const Blog = mongoose.model("Blog, blogSchema");
+const Blog = mongoose.model("Blog", blogSchema);
+
+
 
 //RESTful Routes
 
-
-
-
-
-
-
-
-
-
-
-
-
+app.get()
 
 
 
