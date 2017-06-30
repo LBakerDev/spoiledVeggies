@@ -1,5 +1,32 @@
+body {
+    background-image: url(/stylesheets/jake-hills-194864.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    
+    
+}
+
+.ui.items > .item > .image:not(.ui){
+    width:275px;
+}
+
+.ui[class*="top attached"].segment {
+    bottom: 0px;
+    margin-bottom: 0em;
+    top: 0px;
+    margin-top: 5rem;
+    border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+}
+
 i.icon {
-    font-size: 2em;
+    font-size: 4.5em;
+}
+
+.ui.huge.header{
+    font-size: 4em;
+    color:black;
 }
 
 .container.main {
