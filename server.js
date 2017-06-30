@@ -101,6 +101,20 @@ app.put("/blogs/:id/", function(req,res) {
     })
 })
 
+// Delete Route
+app.delete("/blogs/:id/", function(req,res) {
+    // destroy post
+    Blog.findByIdAndRemove(req.params.id, function(err) {
+        if(err){
+            console.log("This is jacked");
+            res.redirect('/blogs');
+        } else {
+            console.log("Delete successful");
+            res.redirect("/blogs");
+        }
+    });
+})
+
 app.listen(process.env.PORT || 8080, function() {
     console.log('Server is Running!')
 });
