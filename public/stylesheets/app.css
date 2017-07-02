@@ -8,6 +8,10 @@ body {
     
 }
 
+.btn{
+    line-height: 1;
+}
+
 
 .jumbotron{
     margin-bottom: 30px;
