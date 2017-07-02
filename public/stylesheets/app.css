@@ -1,14 +1,19 @@
-/*body {
-    background-image: url(/stylesheets/jake-hills-194864.jpg);
+body {
+    background-image: url(/stylesheets/lloyd-dirks-74271.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+    font-family: 'Raleway', sans-serif;
     
-    
-}*/
+}
 
 
+.jumbotron{
+    margin-bottom: 30px;
+    color: white;
+    background-color:black;
+    
 }
 
 
@@ -28,5 +33,9 @@
 i.icon {
     font-size: 2.5em;
     color:white;
+    margin: 0em .25em 0em .5em;
 }
 
+#delete{
+    display: inline;
+}
