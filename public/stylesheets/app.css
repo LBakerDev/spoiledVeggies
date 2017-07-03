@@ -1,5 +1,5 @@
 body {
-    background-image: url(/stylesheets/lloyd-dirks-74271.jpg);
+    background-image: url(/stylesheets/images/lloyd-dirks-74271.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -7,6 +7,7 @@ body {
     font-family: 'Raleway', sans-serif;
     
 }
+
 
 .btn{
     line-height: 1;
@@ -26,11 +27,19 @@ body {
     margin-bottom: 30px;
     color: white;
     background-color:black;
+    text-align: center;
     
 }
 
+/*styling for movie title on show*/
+.ui.huge.header {
+    min-height: 1em;
+    font-size: 3em;
+    text-align: center;
+}
 
 
+image styling
 .ui.items > .item > .image:not(.ui){
     width:275px;
 }
@@ -39,7 +48,7 @@ body {
     bottom: 0px;
     margin-bottom: 0em;
     top: 0px;
-    margin-top: 5rem;
+    margin-top: 2rem;
     border-radius: 0.28571429rem 0.28571429rem 0em 0em;
 }
 
@@ -57,6 +66,7 @@ i.icon {
 /*styling for title of blog post*/
 .ui.items > .item > .content > .header:not(.ui) {
     font-size: 2.285714em;
+    color: #BF0000;
 }
 
 /*styling for txt of blog post on index page*/
@@ -97,6 +107,21 @@ ui.items > .item .meta {
     text-transform: none;
 }
 
+/*styling for show page blog content*/
+.description{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size:20px;
+}
+
 #delete{
     display: inline;
+}
+
+@media (min-width: 768px){
+
+.navbar-right {
+    float: right!important;
+    margin-right: 17px;
+}
 }
