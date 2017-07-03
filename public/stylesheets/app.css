@@ -12,6 +12,15 @@ body {
     line-height: 1;
 }
 
+/*nav bar styling*/
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: black;
+}
+
 
 .jumbotron{
     margin-bottom: 30px;
@@ -38,6 +47,54 @@ i.icon {
     font-size: 2.5em;
     color:white;
     margin: 0em .25em 0em .5em;
+}
+
+/*image styling*/
+.ui.items > .item > .image:not(.ui) {
+    width: 350px;
+}
+
+/*styling for title of blog post*/
+.ui.items > .item > .content > .header:not(.ui) {
+    font-size: 2.285714em;
+}
+
+/*styling for txt of blog post on index page*/
+.ui.items > .item > .content > .description {
+    margin-top: 0.6em;
+    max-width: auto;
+    font-size: 2em;
+    line-height: 1.4285em;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+/*styling for read more button*/
+.ui.buttons .button, .ui.buttons .or, .ui.button {
+    font-size: 1.4rem;
+}
+
+
+/*styling for date of post*/
+ui.items > .item .meta {
+    margin: 2.5em 0em 0.5em;
+    font-size: 0.5em;
+    line-height: 1em;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.ui.items > .item .meta :last-child {
+    font-size: 14px;
+    margin-right: 0em;
+}
+
+/*New post styling for title, image and post*/
+.ui.form .field > label {
+    display: block;
+    margin: 0em 0em 0.28571429rem 0em;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 1.928571em;
+    font-weight: bold;
+    text-transform: none;
 }
 
 #delete{
