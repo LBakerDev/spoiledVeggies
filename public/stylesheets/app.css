@@ -125,3 +125,11 @@ ui.items > .item .meta {
     margin-right: 17px;
 }
 }
+
+@media (max-width: 767px) {
+
+    .mobile-list .ui.items:not(.unstackable) > .item > .image, .ui.items:not(.unstackable) > .item > .image > img {
+        
+        
+    }
+}
