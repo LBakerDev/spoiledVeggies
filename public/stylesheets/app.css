@@ -135,6 +135,7 @@ ui.items > .item .meta {
 .navbar-right {
     float: right!important;
     margin-right: 17px;
+    margin-top: -43px;
 
 }
 }
