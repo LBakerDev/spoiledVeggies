@@ -123,6 +123,10 @@ ui.items > .item .meta {
     display: inline;
 }
 
+#cancel {
+    font-size: 15px;
+    margin-left: 15px;
+}
 @media (min-width: 768px){
 
 .navbar-right {
