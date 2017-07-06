@@ -136,7 +136,7 @@ ui.items > .item .meta {
 }
 
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1080px) {
     .ui.items:not(.unstackable) > .item > .image, .ui.items:not(.unstackable) > .item > .image > img {
     max-width: 100% !important;
     width: auto !important;
@@ -153,3 +153,21 @@ ui.items > .item .meta {
 
 }
 }
+
+@media only screen and (max-width: 1080px)
+{
+
+.ui.items:not(.unstackable) > .item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 2em 0em;
+}
+}
+
+.ui.items > .item {
+    font-size: 1em;
+}
+

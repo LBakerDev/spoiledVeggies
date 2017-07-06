@@ -11,18 +11,17 @@ You need to run "NPM Test" in order to initiate.
 
 ##Built with:
 
-HTML
-CSS
-Javascript
-EJS - template engine
-Node.js - for backend processes
-Express - Web framework
-MongoDB - Database
+- HTML
+- CSS
+- Javascript
+- EJS - template engine
+- Node.js - for backend processes
+- Express - Web framework
+- MongoDB - Database
 
 ##Deployment
-
-Deploy through Heroku. Heroku will pull latest push from Github and deploy app
-once tests pass. 
+I'm hosting this on Heroku. I have Heroku set to watch the master branch for the latest
+push and travis to test endpoints. Once tests pass with travis, the app deploys. 
 
 ##Author:
 
