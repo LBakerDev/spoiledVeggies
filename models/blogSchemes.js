@@ -3,10 +3,10 @@
 const mongoose = require("mongoose");
 
 const blogSchema = new mongoose.Schema({
-    title: {type: String, required: true},
-    movieName: {type: String, required: true},
-    image: {type: String, required: true},
-    body: {type: String, required: true},
+    title: {type: String, required: false},
+    movieName: {type: String, required: false},
+    image: {type: String, required: false},
+    body: {type: String, required: false},
     created: {type: Date, default: Date.now}
 });
 
