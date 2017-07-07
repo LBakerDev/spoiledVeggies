@@ -1,6 +1,10 @@
 var chai = require('chai');
 var chaiHttp = require('chai-http');
+// set test db:
+process.env.DATABASE_URL = 'mongodb://localhost/spoiledveggies-test';
+
 var server = require('../server.js');
+const Blog = require("../models/blogSchemes");
 
 
 var should = chai.should();
@@ -10,6 +14,19 @@ var storage = server.storage;
 chai.use(chaiHttp);
 
 describe('index page', function () {
+
+    before(function(done) {
+        Blog.remove({}, function() {
+            done();
+        });
+    });
+
+    after(function(done) {
+        Blog.remove({}, function() {
+            done();
+        });
+    });
+
     it('exists', function (done) {
         chai.request(app)
             .get('/')
@@ -19,6 +36,8 @@ describe('index page', function () {
                 done();
             });
     });
+
+    
     it('successfully goes to new post page', function (done) {
         chai.request(app)
             .get('/blogs/new')
@@ -58,6 +77,8 @@ describe('index page', function () {
     it('successfully updates a post', function(done) {
         chai.request(app)
         .put('/blogs/:id')
+        .set('content-type', 'application/x-www-form-urlencoded')
+        .send({title: 'test', movieName:'blah', body: 'hi', image: ''})
         .end(function (err, res) {
             res.should.have.status(200);
             done();
@@ -67,6 +88,8 @@ describe('index page', function () {
     it('successfully completes post and returns to index page', function(done) {
         chai.request(app)
         .post('/blogs')
+        .set('content-type', 'application/x-www-form-urlencoded')
+        .send({title: 'test', movieName:'blah', body: 'hi', image: ''})
         .end(function (err, res) {
             res.should.have.status(200);
             done();
