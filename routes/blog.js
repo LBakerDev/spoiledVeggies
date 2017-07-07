@@ -34,7 +34,7 @@ router.post("/blogs", function(req,res) {
     Blog.create(req.body.blog, function(err, newBlog) {
         if(err){
             console.log(err);
-            res.render("new");
+            res.render("new", {error: err});
         } else {
             // then, redirect to index
             res.redirect("/blogs");

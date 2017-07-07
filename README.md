@@ -1,6 +1,9 @@
 #Spoiled Veggies
 
-This is a simple blog app that uses a RESTFUL API structure with a total of 7 routes. 
+A simple movie review blog that allows users to add, edit and delete posts. Each
+post also links to the Fandango and IMDB page of the movie reviewed
+
+The app uses a RESTful API structure with a total of seven routes.  
 
 ##Running Tests:
 
@@ -14,6 +17,8 @@ You need to run "NPM Test" in order to initiate.
 - HTML
 - CSS
 - Javascript
+- Bootstrap
+- Semantic UI
 - EJS - template engine
 - Node.js - for backend processes
 - Express - Web framework
