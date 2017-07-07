@@ -3,9 +3,7 @@ var chaiHttp = require('chai-http');
 
 const {app, runServer, closeServer} = require('../server');
 
-
 const Blog = require("../models/blogSchemes");
-
 
 var should = chai.should();
 
