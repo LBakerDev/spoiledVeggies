@@ -1,7 +1,6 @@
 var chai = require('chai');
 var chaiHttp = require('chai-http');
-// set test db:
-process.env.DATABASE_URL = 'mongodb://localhost/spoiledveggies-test';
+
 
 var server = require('../server.js');
 const Blog = require("../models/blogSchemes");

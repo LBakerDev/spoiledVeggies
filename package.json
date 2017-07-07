@@ -4,7 +4,8 @@
   "description": "This is in app for movie reviews",
   "main": "server.js",
   "scripts": {
-    "test": "mocha"
+    "start-dev": "NODE_ENV=development nodemon server",
+    "test": "NODE_ENV=test mocha"
   },
   "author": "London Baker",
   "license": "ISC",

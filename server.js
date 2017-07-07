@@ -8,8 +8,11 @@ Blog                = require("./models/blogSchemes");
 const blogRoutes    = require("./routes/blog");
 
 // include config.js for PORT and DB info
-const { PORT, DATABASE_URL } = require('./config');
-mongoose.connect(DATABASE_URL);
+// const { PORT, DATABASE_URL } = require('./config');
+// mongoose.connect(DATABASE_URL);
+
+const config = require('./config');
+mongoose.connect(config.DATABASE_URL);
 
 // App configuration
 app.set("view engine", "ejs");
@@ -21,7 +24,7 @@ app.use(blogRoutes);
 
 
 
-app.listen(PORT || 8080, function() {
+app.listen(config.PORT || 8080, function() {
     console.log('Server is Running!')
 });
 
