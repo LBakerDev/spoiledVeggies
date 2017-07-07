@@ -6,13 +6,10 @@ app                 = express(),
 Blog                = require("./models/blogSchemes");
 
 const blogRoutes    = require("./routes/blog");
-
-// include config.js for PORT and DB info
-// const { PORT, DATABASE_URL } = require('./config');
-// mongoose.connect(DATABASE_URL);
-
 const config = require('./config');
-mongoose.connect(config.DATABASE_URL);
+// mongoose.connect(config.DATABASE_URL);
+const {DATABASE_URL, PORT} = config;
+
 
 // App configuration
 app.set("view engine", "ejs");
@@ -22,10 +19,45 @@ app.use(methodOverride("_method"));
 
 app.use(blogRoutes);
 
+let server;
+
+function runServer(databaseUrl=DATABASE_URL, port=PORT) {
+    console.log(databaseUrl, 'Server Running!');
+    return new Promise((resolve, reject)=> {
+        mongoose.connect(databaseUrl, err => {
+            if (err) {
+                return reject(err);
+            }
+
+            server = app.listen(port, () => {
+                console.log(`Your app is listening on port ${port}`);
+                resolve();
+            })
+            .on('error', err => {
+                mongoose.disconnect();
+                reject(err);
+            });
+        });
+    });
+}
+
+function closeServer() {
+    return new Promise((resolve, reject) => {
+        console.log("Closing Server");
+        server.close(err =>{
+            if (err) {
+                reject(err);
+                // so we don't also call `resolve()`
+                return;
+            }
+            resolve();
+        });
+    });
+}
+
+if (require.main === module) {
+    runServer().catch(err => console.error(err));
+};
 
 
-app.listen(config.PORT || 8080, function() {
-    console.log('Server is Running!')
-});
-
-module.exports = {app};
+module.exports = {app, server, runServer, closeServer};

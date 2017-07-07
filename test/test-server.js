@@ -1,29 +1,35 @@
 var chai = require('chai');
 var chaiHttp = require('chai-http');
 
+const {app, runServer, closeServer} = require('../server');
 
-var server = require('../server.js');
+
 const Blog = require("../models/blogSchemes");
 
 
 var should = chai.should();
-var app = server.app;
-var storage = server.storage;
+
 
 chai.use(chaiHttp);
 
 describe('index page', function () {
 
-    before(function(done) {
-        Blog.remove({}, function() {
-            done();
-        });
+    before(function() {
+        return runServer();
     });
 
-    after(function(done) {
-        Blog.remove({}, function() {
-            done();
-        });
+
+    // before(function(done) {
+    //     Blog.remove({}, function() {
+    //         done();
+    //     });
+    // });
+
+    after(function() {
+        // Blog.remove({}, function() {
+            return closeServer();
+            // done();
+        //});
     });
 
     it('exists', function (done) {
