@@ -1,5 +1,5 @@
 const bodyParser    = require('body-parser'),
-morgan              = require('morgan');
+morgan              = require('morgan'),git 
 methodOverride      = require("method-override"),
 mongoose            = require('mongoose'),
 express             = require('express'),
