@@ -1,5 +1,5 @@
 const bodyParser    = require('body-parser'),
-morgan              = require('morgan'),
+//morgan              = require('morgan'),
 methodOverride      = require("method-override"),
 mongoose            = require('mongoose'),
 express             = require('express'),
@@ -13,7 +13,7 @@ const {DATABASE_URL, PORT} = config;
 
 
 // App configuration
-app.use(morgan('common'));
+//app.use(morgan('common'));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
