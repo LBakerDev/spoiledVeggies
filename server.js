@@ -23,6 +23,7 @@ app.use(blogRoutes);
 
 let server;
 
+
 function runServer(databaseUrl=DATABASE_URL, port=PORT) {
     console.log(databaseUrl, 'Server Running!');
     return new Promise((resolve, reject)=> {
