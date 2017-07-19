@@ -1,10 +1,8 @@
 language: node_js
 node_js: 7.10.0
 deploy: lit-harbor-42718
-
   provider: heroku
   api_key:
     secure: ttAy9btl+95OH/fqeSX2Ey8trzZHDvrzRMOB7SI5SLdU9bp8+voOxqYxfr7ed3lwmTf7k1gfegLwMMNYIGx+XDQpTUJQjJUlVGjK8cTaaiwGszFC3Nm2D4jV4tDeP8TRKRSqoH6+s1JiVrzDH7YICkEBbhoO8SiNfg/JuY1qCXbEOdAYE31a8ccZYz1QKp6I0a7XFFRKAZhLICiMw7FyOJu5KPfu1r/dDC3yN1+WpI7pr6YrZ33OBXKfO7amY1OxEck/Yc+Z5UGDZodts5Qh+gie6eHKZmPnid/eGhpvEK+AijudYE2sXqvixRRJkuLdEU6F7cUk2gxgF8fxUt/iRNm76gOB9buomS1ktyZgxSd4uBcELGEP/Ia9tMNTl/gfo97plYObE0xzU5omoBoaMGUOXn4Fu0FFBaDS2vMhMbfSRhi9VU5ct1fS2+3FDOMxfBNXklXBaS1X0xsKw5LjeRLZbTlIAubne5fqN0AyKNwmbEDYk/Fl+zYKIUcw1vpY9jPMDnS9Z7lUbNbeiLakkafC3HHbb8u3I3tkz07d1wufiIeJemDtzdfsOfrq44NgdTC0HNS+HJ0xX4p1h0D0DXdcEogZTjdHhsxeduHyAyr5oO1Lf+3fRAIUAUp6o0WtraoSy2rBczAnbsEY2ib010lvT9V+WBGA7qmx7/slXtE=
   app: lit-harbor-42718
-
     master: spoiledVeggies
