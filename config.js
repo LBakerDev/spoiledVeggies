@@ -7,8 +7,8 @@ let config = {
     },
     development: {
         DATABASE_URL: process.env.DATABASE_URL ||
-                        global.DATABASE_URL ||
-                        'mongodb://localhost/spoiledveggies',
+        global.DATABASE_URL ||
+        'mongodb://localhost/spoiledveggies',
         PORT: (process.env.PORT || 8080)
     },
     test: {

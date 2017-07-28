@@ -9,7 +9,7 @@ const Blog = require("../models/blogSchemes");
 
 // route to GET all blog posts
 router.get("/", function(req, res) {
-    res.redirect("/blogs");
+    res.render("landing");
 });
 
 // Index Route
