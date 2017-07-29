@@ -14,6 +14,44 @@ body {
     background-attachment: fixed;
     background-size: cover;
     font-family: 'Raleway', sans-serif;
+}
+
+.landingButton{
+    text-align: center;
+}
+
+.btn-primary {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #802226;
+    border-color: #802226;
+    text-align: center;
+}
+.btnHome {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #be001f;
+    border-color: #802226;
+    text-align: center;
+    color: white;
+    margin-bottom: 1em;
+    width: 7em;
+}
+.btnShow {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #be001f;
+    border-color: #802226;
+    text-align: center;
+    color: white;
+    margin-bottom: 1em;
+    width: 15em;
+}
+
+.btn-primary:hover{
+
+    background-color: #802228;
+    border-color: #802228;
     
 }
 
@@ -77,7 +115,7 @@ i.icon {
 /*styling for title of blog post*/
 .ui.items > .item > .content > .header:not(.ui) {
     font-size: 2.285714em;
-    color: #BF0000;
+    color: #be001f;
 }
 
 /*styling for txt of blog post on index page*/
@@ -175,5 +213,10 @@ ui.items > .item .meta {
 
 .ui.items > .item {
     font-size: 1em;
+}
+
+.item{
+    margin-bottom:2em;
+    
 }
 
