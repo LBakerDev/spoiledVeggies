@@ -2,8 +2,9 @@
     font-family: raleway;
 } 
 
-p{
-    font-family: cardo;
+.navbar-inverse{
+    background-color: black;
+    border-color: black
 }
 
 body {
@@ -65,15 +66,6 @@ body {
 
 .btn{
     line-height: 1;
-}
-
-/*nav bar styling*/
-.container-fluid {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: black;
 }
 
 
@@ -178,13 +170,13 @@ ui.items > .item .meta {
     font-size: 15px;
     margin-left: 15px;
 }
-@media (min-width: 768px){
+/* @media (min-width: 768px){
 
 .navbar-right {
     float: right!important;
     margin-right: 17px;
 }
-}
+} */
 
 
     @media only screen and (max-width: 1080px) {

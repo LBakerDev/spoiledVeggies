@@ -1,15 +1,16 @@
-const bodyParser = require('body-parser'),
-    //morgan              = require('morgan'),
-    methodOverride = require("method-override"),
-    mongoose = require('mongoose'),
-    express = require('express'),
-    app = express(),
-    passport = require('passport'),
-    LocalStrategy = require("passport-local"),
-    User = require("./models/user"),
-    Blog = require("./models/blogSchemes");
+const bodyParser    = require('body-parser'),
+    
+    methodOverride  = require("method-override"),
+    mongoose        = require('mongoose'),
+    express         = require('express'),
+    app             = express(),
+    passport        = require('passport'),
+    LocalStrategy   = require("passport-local"),
+    User            = require("./models/user"),
+    Blog            = require("./models/blogSchemes");
 
 const blogRoutes = require("./routes/blog");
+const authRoutes = require("./routes/auth");
 const config = require('./config');
 
 const { DATABASE_URL, PORT } = config;
@@ -22,6 +23,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(blogRoutes);
+app.use(authRoutes);
 
 // PASSPORT config
 app.use(require("express-session")({
@@ -35,6 +37,12 @@ app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+//Middleware to check if user is logged in. Runs on every route
+app.use(function(req, res, next) {
+    res.locals.currentUser = req.user;
+    next();
+});
 
 let server;
 
@@ -76,38 +84,4 @@ function closeServer() {
 if (require.main === module) {
     runServer().catch(err => console.error(err));
 };
-
-//show register form
-app.get("/register", function (req, res) {
-    res.render("register");
-});
-
-//handle sign up logic
-app.post("/register", function (req, res) {
-    let newUser = new User({username: req.body.username });
-    User.register(newUser, req.body.password, function (err, user) {
-        if (err) {
-            console.log(err);
-            return res.render("register")
-        }
-        passport.authenticate("local")(req, res, function () {
-            res.redirect("/blogs");
-        });
-
-    });
-});
-
-//Show login form
-app.get("/login", function(req, res) {
-    res.render("login");
-}) 
-
-//Handle Login logic. Run middleware using local strategy then use callback
-app.post("/login", passport.authenticate("local", { 
-    successRedirect: "/blogs",
-    failureRedirect: "/login"
- }), function(req, res) {
-   
-})
-
-module.exports = { app, server, runServer, closeServer };
+module.exports = { app, server, runServer, closeServer};

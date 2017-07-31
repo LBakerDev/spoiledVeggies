@@ -1,30 +1,33 @@
-
-
 const express = require("express");
 const router = express.Router();
 const Blog = require("../models/blogSchemes");
+const passport = require("passport");
+
+
 
 
 //RESTful Routes
 
 // route to GET all blog posts
 router.get("/", function(req, res) {
+    
     res.render("landing");
 });
 
 // Index Route
 router.get("/blogs", function(req, res) {
+    console.log(req.user);
     Blog.find({}, function(err, blogs) {
         if(err) {
             console.log("ERROR!");
         } else {
-            res.render("index", {blogs: blogs});
+            res.render("index", {blogs: blogs, currentUser: req.user});
         }
     })
 })
 
 // New Route
-router.get("/blogs/new", function(req, res) {
+router.get("/blogs/new", isLoggedIn, function(req, res) {
     res.render("new");
 });
 
@@ -58,7 +61,7 @@ router.get("/blogs/:id", function(req,res) {
 })
 
 // Edit Route
-router.get("/blogs/:id/edit", function(req,res) {
+router.get("/blogs/:id/edit", isLoggedIn, function(req,res) {
     Blog.findById(req.params.id, function(err, foundBlog) {
         if(err){
             res.redirect("/blogs");
@@ -69,7 +72,7 @@ router.get("/blogs/:id/edit", function(req,res) {
 })
 
 // Update Route
-router.put("/blogs/:id/", function(req,res) {
+router.put("/blogs/:id/", isLoggedIn, function(req,res) {
     Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog) {
         if(err){
             res.redirect("/blogs");
@@ -80,7 +83,7 @@ router.put("/blogs/:id/", function(req,res) {
 })
 
 // Delete Route
-router.delete("/blogs/:id/", function(req,res) {
+router.delete("/blogs/:id/", isLoggedIn, function(req,res) {
     // destroy post
     Blog.findByIdAndRemove(req.params.id, function(err) {
         if(err){
@@ -92,5 +95,12 @@ router.delete("/blogs/:id/", function(req,res) {
         }
     });
 })
+
+function isLoggedIn(req, res, next) {
+    if(req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect("/login");
+}
 
 module.exports = router;
