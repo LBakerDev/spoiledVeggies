@@ -1,3 +1,11 @@
+ h1{
+    font-family: raleway;
+} 
+
+p{
+    font-family: cardo;
+}
+
 body {
     background-image: url(/stylesheets/images/lloyd-dirks-74271.jpg);
     background-repeat: no-repeat;
@@ -5,7 +13,6 @@ body {
     background-attachment: fixed;
     background-size: cover;
     font-family: 'Raleway', sans-serif;
-    
 }
 #landing {
     background-image: url(/stylesheets/images/felix-mooneeram-222805.jpg);
@@ -115,7 +122,7 @@ i.icon {
 /*styling for title of blog post*/
 .ui.items > .item > .content > .header:not(.ui) {
     font-size: 2.285714em;
-    color: #be001f;
+    color: black;
 }
 
 /*styling for txt of blog post on index page*/
