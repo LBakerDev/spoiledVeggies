@@ -238,3 +238,11 @@ ui.items > .item .meta {
     background-image: none;
     margin-top: 6px;
 }
+
+.dropdown-backdrop{
+    position: static;
+}
+
+#mynavbar{
+    float: right;
+}
