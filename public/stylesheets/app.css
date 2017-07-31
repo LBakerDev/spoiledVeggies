@@ -72,6 +72,15 @@ body {
 
 
 .jumbotron{
+    padding-top: 70px;
+    margin-bottom: 30px;
+    color: white;
+    background-color: inherit;
+    text-align: center;
+    
+}
+#landingJumbo{
+    padding-top: 300px;
     margin-bottom: 30px;
     color: white;
     background-color: inherit;
@@ -245,4 +254,8 @@ ui.items > .item .meta {
 
 #mynavbar{
     float: right;
+}
+
+.ui.segment{
+    margin-top: 15rem;
 }
