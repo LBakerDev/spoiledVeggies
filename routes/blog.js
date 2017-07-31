@@ -3,9 +3,6 @@ const router = express.Router();
 const Blog = require("../models/blogSchemes");
 const passport = require("passport");
 
-
-
-
 //RESTful Routes
 
 // route to GET all blog posts
@@ -102,5 +99,10 @@ function isLoggedIn(req, res, next) {
     }
     res.redirect("/login");
 }
+
+router.use(function(req, res, next) {
+    res.locals.currentUser = req.user;
+    next();
+});
 
 module.exports = router;

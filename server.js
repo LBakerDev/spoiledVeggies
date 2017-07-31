@@ -22,8 +22,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
-app.use(blogRoutes);
-app.use(authRoutes);
+
 
 // PASSPORT config
 app.use(require("express-session")({
@@ -43,6 +42,10 @@ app.use(function(req, res, next) {
     res.locals.currentUser = req.user;
     next();
 });
+
+//Telling server.js to use RESTful routes
+app.use(blogRoutes);
+app.use(authRoutes);
 
 let server;
 

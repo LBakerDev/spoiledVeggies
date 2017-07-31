@@ -11,7 +11,7 @@ router.get("/register", function (req, res) {
 
 //handle sign up logic
 router.post("/register", function (req, res) {
-    let newUser = new User({username: req.body.username });
+    var newUser = new User({username: req.body.username });
     User.register(newUser, req.body.password, function (err, user) {
         if (err) {
             console.log(err);
@@ -30,12 +30,14 @@ router.get("/login", function(req, res) {
 }) 
 
 //Handle Login logic. Run middleware using local strategy then use callback
-router.post("/login", passport.authenticate("local", { 
+router.post("/login", passport.authenticate("local", 
+{
+
     successRedirect: "/blogs",
     failureRedirect: "/login"
  }), function(req, res) {
    
-})
+});
 
 //Logout route
 router.get("/logout", function(req, res) {
@@ -43,11 +45,12 @@ router.get("/logout", function(req, res) {
     res.redirect("/blogs");
 })
 
+//check to see if use is logged in
 function isLoggedIn(req, res, next) {
     if(req.isAuthenticated()) {
         return next();
     }
     res.redirect("/login");
-}
+};
 
 module.exports = router;
