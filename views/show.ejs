@@ -4,7 +4,7 @@
         <div class="ui huge header">
             <%= blog.title %>
         </div>
-        
+
         <div class="ui top attached segment">
             <div class="item">
                 <img class="ui centered rounded image" src="<%= blog.image %>">
@@ -12,20 +12,23 @@
                     <span><%= blog.created.toDateString() %></span>
                 </div>
                 <div class="description">
-                    <p><%= blog.body %></p>
+                    <p>
+                        <%= blog.body %>
+                    </p>
                 </div>
                 <% if(currentUser) { %>
-                <a class = "glyphicon glyphicon-pencil btn-lg" href="/blogs/<%= blog._id %>/edit"></a>
-                <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
-                
-                    <button class ="ui red button">Delete</button>
-                <%}%>
+                    <a class="ui primary big button" href="/blogs/<%= blog._id %>/edit">Edit</a>
+                    <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
 
-                </form>
-                
+
+                        <a id="cancel" href="/blogs/<%= blog._id %>">Delete</a>
+                        <%}%>
+
+                    </form>
+
             </div>
-            <a class="btn show btnShow" target ="_blank" href="http://www.fandango.com/search?q=<%= blog.movieName %>">Click Here for Showtimes</a>
-            <a class="btn show btnShow" target ="_blank" href="http://www.imdb.com/find?ref_=nv_sr_fn&q=<%= blog.movieName %>&s=all">Click Here for IMDB Info</a>
+            <a class="btn show btnShow" target="_blank" href="http://www.fandango.com/search?q=<%= blog.movieName %>">Click Here for Showtimes</a>
+            <a class="btn show btnShow" target="_blank" href="http://www.imdb.com/find?ref_=nv_sr_fn&q=<%= blog.movieName %>&s=all">Click Here for IMDB Info</a>
         </div>
     </div>
 
