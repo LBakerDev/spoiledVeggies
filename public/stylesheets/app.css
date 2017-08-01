@@ -259,3 +259,15 @@ ui.items > .item .meta {
 .ui.segment{
     margin-top: 15rem;
 }
+
+ .ui.form input[type="text"] {
+     font-size: 18px
+ }
+
+ .ui.form input[type="password"] {
+     font-size: 18px
+ }
+
+ .ui.form textarea{
+     font-size: 15px
+ }
