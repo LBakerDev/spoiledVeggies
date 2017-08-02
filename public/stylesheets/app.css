@@ -271,3 +271,21 @@ ui.items > .item .meta {
  .ui.form textarea{
      font-size: 15px
  }
+
+ #main_footer {
+   padding-top: 5px;
+    /* border-top: 1px solid grey; */
+    background-color:black;
+    
+    bottom: 0;
+    width: 100%;
+}
+
+div p{
+    text-align: center;
+    font-size: 1.3em
+}
+
+#demo{
+    color: #2185d0;
+}
