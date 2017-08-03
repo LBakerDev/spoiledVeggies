@@ -181,14 +181,10 @@ ui.items > .item .meta {
     font-size: 15px;
     margin-left: 15px;
 }
-/* @media (min-width: 768px){
 
-.navbar-right {
-    float: right!important;
-    margin-right: 17px;
-}
-} */
-
+#cancel:hover{
+    cursor: pointer;
+} 
 
     @media only screen and (max-width: 1080px) {
     .ui.items:not(.unstackable) > .item > .image, .ui.items:not(.unstackable) > .item > .image > img {
@@ -289,3 +285,5 @@ ui.items > .item .meta {
 #demo{
     color: #2185d0;
 }
+
+ 
